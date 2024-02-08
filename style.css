@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+*, :root{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+body{
+  background-color: #101418;
+}
+main{
+  padding: 20px;
+  max-width: 640px;
+  margin: 0 auto 50px;
+}
+header{
+  margin-top: 64px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #334155;
+}
+header h1{
+  margin-top: 24px;
+  font-size: 30px;
+  color: #FFF5F5;
+}
+#quiz{
+  counter-reset: quiz-item;
+}
+.quiz__item{
+  margin-top: 24px;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.quiz__item h3{
+  padding: 16px 20px;
+  color: #E8E1E1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #394756;
+}
+.quiz__item h3::before{
+  counter-increment: quiz-item;
+  content: counter(quiz-item);
+  background-color: #475569;
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+}
+.quiz__item dl{
+  padding: 20px 24px;
+  display: grid;
+  gap: 8px;
+}
+.quiz__item dl dt{
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #E8E1E1;
+}
+input{
+  all: unset;
+  border: 1px solid #E8E1E1;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+input:checked{
+  border: 1px solid #0061BE;
+}
+/*Pseudo-Selector*/
+input:checked::before{
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #0061BE;
+  border-radius: 50%;
+}
+#acertos{
+  text-align: center;
+  background-color: #0061BE;
+  color: #FFF5F5;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+}
